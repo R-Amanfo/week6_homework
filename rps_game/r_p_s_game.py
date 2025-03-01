@@ -91,10 +91,9 @@ def play_game(rounds=3):
         print(f"\nYour score is : {user_score}  |  Computer score is : {computer_score}")
         print("\n" + "*" * 50)
 
-    # Display final winner based the score
+    # Display final winner based on the score
     if user_score > computer_score:
         print(f"{emojize(':party_popper:')} Congratulations, You won!! \U0001F600")
-        #print("Congratulations, You won!!")
     elif user_score < computer_score:
         print(f"{emojize(':desktop_computer:')} Computer Wins! Try again!! \U0001F642")
     else:
