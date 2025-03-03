@@ -15,8 +15,7 @@ def get_user_choice() :
             return user_response      # This returns the valid choice, e.g., "Rock"
         else:
             print("Invalid choice! Please enter R, P, S, L, or SP.") # Ask again if input is invalid
-            #return get_user_choice()      # This calls the function again to ask the user for input again
-    # The return statement returns an object of the type based on the expression's
+            # The return statement returns an object of the type based on the expression's
 
 def get_computer_choice():
     """This function randomly selects a choice for the computer: Rock, Paper,Scissors,Lizard or Spock.
@@ -48,12 +47,12 @@ def determine_winner(user, computer):
     }
 
     if user == computer:
-        return "It's a draw! \U0001F91D Both chose the same.",None  # 🤝 Handshake,None is a keyword that represents the absence of a value
+        return f"It's a draw! {emojize(':handshake:')} Both chose the same.", None   # 🤝 Handshake,None is a keyword that represents the absence of a value
     elif (user, computer) in winning_cases:
         # Returning 2 values, the result message from the winning_cases dictionary based on user and computer choices
-        return f"YOU WIN!! \U0001F389 {winning_cases[(user, computer)]}" , 'user'  # 🎉 Party Popper
+        return f"YOU WIN!! {emojize(':party_popper:')} {winning_cases[(user, computer)]}", 'user'  # 🎉 Party Popper
     else:
-        return f"YOU LOSE! \U0001F622 {winning_cases[(computer, user)]}", 'computer'  # 😢 Crying Face
+        return f"YOU LOSE! {emojize(':crying_face:')} {winning_cases[(computer, user)]}", 'computer'  # 😢 Crying Face
 
 
 def play_game(rounds=3):
@@ -88,7 +87,7 @@ def play_game(rounds=3):
         elif winner == 'computer':
             computer_score +=1
         else:
-            user_score +=1
+            user_score +=1      # executes when the user and computer is tie, both gets a point
             computer_score +=1
 
         total_rounds += 1
@@ -100,7 +99,7 @@ def play_game(rounds=3):
     if user_score > computer_score:
         print(f"The final result is : {emojize(':party_popper:')} Congratulations, You are the winner!! \U0001F600")
     elif user_score < computer_score:
-        print(f"The final result is : {emojize(':desktop_computer:')} Computer Wins! Try again next time!! \U0001F642")
+        print(f"The final result is : {emojize(':desktop_computer:')} Computer Wins! Try again next time!! \U0001F642") # unicode for smiley emoji
     else:
         print("It's tie! Well played by both!\U0001F642")
 
@@ -110,5 +109,5 @@ def play_game(rounds=3):
 # It prevents the game logic from running automatically when the script is imported into another program.
 if __name__ == "__main__":
     play_game()
-
+#play_game()
 
